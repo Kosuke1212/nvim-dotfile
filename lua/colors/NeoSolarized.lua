@@ -1,6 +1,6 @@
 return {
 	"Tsuzat/NeoSolarized.nvim",
-	-- lazy = true,
+	lazy = true,
 	-- priority = 1000,
 	config = function()
 		require("NeoSolarized").setup({

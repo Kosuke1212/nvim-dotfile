@@ -6,4 +6,7 @@ return {
 	dependencies = {
 		"echasnovski/mini.icons",
 	},
+	keys = {
+		{ "<leader>fo", "<cmd>Oil<cr>", desc = "Oil"}
+	}
 }

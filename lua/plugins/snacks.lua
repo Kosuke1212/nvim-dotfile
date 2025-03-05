@@ -7,6 +7,12 @@ return {
 		picker = { enabled = true },
 	},
 	keys = {
-		{"<leader>,",function() Snacks.picker.smart() end, desc = "Smart Find Files"}
-	}
+		{
+			"<leader>,",
+			function()
+				Snacks.picker.smart()
+			end,
+			desc = "Smart Find Files",
+		},
+	},
 }
