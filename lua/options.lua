@@ -5,3 +5,5 @@ vim.o.number = true
 vim.o.cursorline = true
 
 vim.g.mapleader = " "
+
+vim.o.termguicolors = true
