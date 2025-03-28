@@ -17,7 +17,8 @@ return {
 		},
 		completion = {
 			menu = {
-				-- border = "single" ,
+				winblend = vim.o.pumblend,
+				border = "single" ,
 				draw = {
 					-- columns = { {"label"}, { "kind_icon" } },
 					components = {
@@ -45,7 +46,7 @@ return {
 			},
 			documentation = { window = { border = "single" } },
 		},
-		signature = { window = { border = "single" } },
+		signature = { window = { border = "single", winblend = vim.o.pumblend, } },
 		snippets = { preset = "luasnip" },
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer"},
