@@ -11,3 +11,10 @@ vim.o.wrap = false
 
 vim.o.pumblend = 30
 vim.o.winblend = 20
+
+vim.diagnostic.config({
+	virtual_text = false,
+	float = {
+		border = "single",
+	}
+})
