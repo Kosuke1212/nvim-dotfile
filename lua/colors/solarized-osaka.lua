@@ -10,10 +10,10 @@ return {
 			-- Neotree transparent settings
 			on_highlights = function(hl)
 				hl.NeoTreeNormal = {
-					bg = "none"
+					bg = "none",
 				}
 				hl.NeoTreeNormalNC = {
-					bg = "none"
+					bg = "none",
 				}
 			end,
 		})
