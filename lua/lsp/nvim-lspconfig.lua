@@ -11,7 +11,6 @@ return {
 		local mason_lspconfig = require("mason-lspconfig")
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-
 		mason_lspconfig.setup_handlers({
 			--サーバのcapabilitiesを設定
 			function(server_name)
@@ -26,15 +25,26 @@ return {
 					settings = {
 						Lua = {
 							diagnostics = {
-								globals = {"vim"},
+								globals = { "vim" },
 							},
 							completion = {
 								callSnippet = "Replace",
 							},
-						}
-					}
+						},
+					},
 				})
 			end,
+		})
+
+		vim.diagnostic.config({
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = "",
+					[vim.diagnostic.severity.WARN] = " ",
+					[vim.diagnostic.severity.INFO] = " ",
+					[vim.diagnostic.severity.HINT] = "󱩎 ",
+				},
+			},
 		})
 	end,
 }

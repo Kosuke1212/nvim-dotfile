@@ -26,7 +26,7 @@ return {
 		{ "gt", "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek type definition"},
 		{ "ga", "<cmd>Lspsaga code_action<CR>", desc = "Code Action"},
 		{ "gr", "<cmd>Lspsaga rename<CR>", desc = "Rename"},
-		-- { "g]", "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Diagnostics jump next"},
-		-- { "g[", "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Diagnostics jump prev"},
+		{ "g]", "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Diagnostics jump next"},
+		{ "g[", "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Diagnostics jump prev"},
 	}
 }
