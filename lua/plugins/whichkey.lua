@@ -6,9 +6,16 @@ return {
 		vim.o.timeoutlen = 300
 	end,
 	opts = {
+		preset = "helix",
 		spec = {
-			{ "<leader>f", group = "pickers" },
+			{ "<leader>s", group = "Pickers", icon = { icon = "󰍉", color = "purple" } },
+			{ "<leader>u", group = "Toggle", icon = { icon = "", color = "green" } },
+			{ "<leader>f", group = "Find", icon = { icon = "󰮗", color = "purple" } },
+			{ "<leader>g", group = "Git", icon = { icon = "", color = "orange" } },
 		},
 		trigger = { "<leader>" },
+		win = {
+			border = "single",
+		},
 	},
 }
