@@ -20,6 +20,7 @@ return {
 				"sql",
 				"cpp",
 				"c",
+				"regex",
 			},
 			highlight = {
 				enable = true,
