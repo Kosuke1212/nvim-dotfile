@@ -16,5 +16,7 @@ vim.diagnostic.config({
 	virtual_text = false,
 	float = {
 		border = "single",
-	}
+	},
 })
+
+-- vim.o.statuscolumn = "%=%{printf('%2d', v:lnum)}%s"
