@@ -19,4 +19,4 @@ vim.diagnostic.config({
 	},
 })
 
-vim.o.statuscolumn = "%=%{printf('%2d', v:lnum)}%s"
+-- vim.o.statuscolumn = "%=%{printf('%2d', v:lnum)}%s"

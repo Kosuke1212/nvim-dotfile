@@ -7,7 +7,7 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	version = "*",
-	event = { "InsertEnter", "CmdLineEnter"},
+	event = { "InsertEnter", "CmdLineEnter" },
 	---@module "blink.cmp"
 	---@type blink.cmp.Config
 	opts = {
@@ -18,16 +18,16 @@ return {
 		completion = {
 			menu = {
 				winblend = vim.o.pumblend,
-				border = "single" ,
+				-- border = "single" ,
 				draw = {
 					-- columns = { {"label"}, { "kind_icon" } },
 					components = {
 						kind_icon = {
 							ellipsis = false,
-							text = function (ctx)
+							text = function(ctx)
 								local lspkind = require("lspkind")
 								local icon = ctx.kind_icon
-								if vim.tbl_contains({"Path"}, ctx.source_name) then
+								if vim.tbl_contains({ "Path" }, ctx.source_name) then
 									local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
 									if dev_icon then
 										icon = dev_icon
@@ -40,16 +40,16 @@ return {
 
 								return icon .. ctx.icon_gap
 							end,
-						}
-					}
-				}
+						},
+					},
+				},
 			},
 			documentation = { window = { border = "single" } },
 		},
-		signature = { window = { border = "single", winblend = vim.o.pumblend, } },
+		signature = { window = { border = "single", winblend = vim.o.pumblend } },
 		snippets = { preset = "luasnip" },
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer"},
+			default = { "lsp", "path", "snippets", "buffer" },
 		},
 	},
 	opts_extend = { "sources.default" },
