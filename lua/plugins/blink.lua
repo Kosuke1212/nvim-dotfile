@@ -51,6 +51,9 @@ return {
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 		},
+
+		-- :!でコマンドの補完の影響でフリーズするので一時的な処理．
+		cmdline = { enabled = false },
 	},
 	opts_extend = { "sources.default" },
 }
