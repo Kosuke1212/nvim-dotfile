@@ -3,6 +3,7 @@ vim.o.softtabstop = -1
 vim.o.tabstop = 4
 vim.o.number = true
 vim.o.cursorline = true
+vim.o.laststatus = 3
 
 vim.g.mapleader = " "
 
