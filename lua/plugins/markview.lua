@@ -1,10 +1,10 @@
 return {
 	"OXY2DEV/markview.nvim",
-	lazy = false,
-
+	event = "VeryLazy",
+	-- lazy = true,
 	-- For blink.cmp's completion
 	-- source
 	dependencies = {
-		"saghen/blink.cmp"
+		"saghen/blink.cmp",
 	},
-};
+}
