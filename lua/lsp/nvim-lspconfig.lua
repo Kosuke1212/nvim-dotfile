@@ -11,31 +11,30 @@ return {
 		local mason_lspconfig = require("mason-lspconfig")
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-		mason_lspconfig.setup_handlers({
-			--サーバのcapabilitiesを設定
-			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = capabilities,
-				})
-			end,
-			--各サーバごとの設定で上書き
-			["lua_ls"] = function()
-				lspconfig["lua_ls"].setup({
-					capabilities = capabilities,
-					settings = {
-						Lua = {
-							diagnostics = {
-								globals = { "vim" },
-							},
-							completion = {
-								callSnippet = "Replace",
-							},
-						},
-					},
-				})
-			end,
-		})
-
+		-- mason_lspconfig.setup_handlers({
+		-- 	--サーバのcapabilitiesを設定
+		-- 	function(server_name)
+		-- 		lspconfig[server_name].setup({
+		-- 			capabilities = capabilities,
+		-- 		})
+		-- 	end,
+		-- 	--各サーバごとの設定で上書き
+		-- 	["lua_ls"] = function()
+		-- 		lspconfig["lua_ls"].setup({
+		-- 			capabilities = capabilities,
+		-- 			settings = {
+		-- 				Lua = {
+		-- 					diagnostics = {
+		-- 						globals = { "vim" },
+		-- 					},
+		-- 					completion = {
+		-- 						callSnippet = "Replace",
+		-- 					},
+		-- 				},
+		-- 			},
+		-- 		})
+		-- 	end,
+		-- })
 		vim.diagnostic.config({
 			signs = {
 				text = {
