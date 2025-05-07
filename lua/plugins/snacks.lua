@@ -11,6 +11,7 @@ return {
 			enable = true,
 			which_key = true,
 		},
+		zen = { enabled = true },
 	},
 	keys = {
 		{
@@ -341,6 +342,13 @@ return {
 				Snacks.toggle.diagnostics({ name = " Diagnostics" })
 			end,
 			desc = "Toggle",
+		},
+		{
+			"<leader>z",
+			function()
+				Snacks.zen()
+			end,
+			desc = "Toggle Zen Mode",
 		},
 		-- { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
 		-- { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
