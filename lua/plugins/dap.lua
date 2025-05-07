@@ -21,12 +21,6 @@ return -- nvim-dapを中心にしたDAP関連の読み込み例
 		{
 			"jay-babu/mason-nvim-dap.nvim",
 			dependencies = { "williamboman/mason.nvim" },
-			-- config = function()
-			-- 	require("mason-nvim-dap").setup({
-			-- 		automatic_setup = true,
-			-- 		handlers = {},
-			-- 	})
-			-- end,
 		},
 	},
 	keys = {
@@ -51,15 +45,74 @@ return -- nvim-dapを中心にしたDAP関連の読み込み例
 			end,
 			desc = "Debug: toggle break",
 		},
+		{
+			"<leader>dt",
+			function()
+				require("dap").terminate()
+			end,
+			desc = "debug: terminate",
+		},
 	},
 	config = function()
 		local dap = require("dap")
-		-- アダプタ設定やキーマップなど
+		local dap_ui = require("dapui")
+
+		--dap ui auto open/close setting
+		dap.listeners.before.attach.dapui_config = function()
+			dap_ui.open()
+		end
+		dap.listeners.before.launch.dapui_config = function()
+			dap_ui.open()
+		end
+		dap.listeners.before.event_terminated.dapui_config = function()
+			dap_ui.close()
+		end
+		dap.listeners.before.event_exited.dapui_config = function()
+			dap_ui.close()
+		end
+
 		-- Mason Dap
 		local mason_dap = require("mason-nvim-dap")
 		mason_dap.setup({
-			ensure_installed = { "python" },
+			handlers = {},
+			ensure_installed = { "python", "bash" },
 			automatic_installation = true,
+		})
+
+		-- Icon settings
+		vim.fn.sign_define("DapBreakpoint", {
+			text = "●",
+			texthl = "DiagnosticSignError",
+			linehl = "",
+			numhl = "",
+		})
+
+		vim.fn.sign_define("DapBreakpointCondition", {
+			text = "◆",
+			texthl = "DiagnosticSignWarn",
+			linehl = "",
+			numhl = "",
+		})
+
+		vim.fn.sign_define("DapLogPoint", {
+			text = "◆",
+			texthl = "DiagnosticSignInfo",
+			linehl = "",
+			numhl = "",
+		})
+
+		vim.fn.sign_define("DapStopped", {
+			text = "→",
+			texthl = "DiagnosticSignHint",
+			linehl = "Visual",
+			numhl = "",
+		})
+
+		vim.fn.sign_define("DapBreakpointRejected", {
+			text = "✖",
+			texthl = "DiagnosticSignError",
+			linehl = "",
+			numhl = "",
 		})
 	end,
 }
