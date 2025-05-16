@@ -18,18 +18,18 @@ return {
 				lua = { "stylua" },
 				python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 			},
-			format_on_save = {
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 500,
-			},
+			-- format_on_save = {
+			-- 	lsp_fallback = true,
+			-- 	async = true,
+			-- 	timeout_ms = 3000,
+			-- },
 		})
 	end,
 	keys = {
 		{
 			"<leader>cf",
 			function()
-				require("conform").format({ lsp_fallback = true, async = false, timeout_ms = 500 })
+				require("conform").format({ lsp_fallback = true, async = true, timeout_ms = 500 })
 			end,
 			desc = "Format with Conform",
 		},
