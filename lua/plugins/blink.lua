@@ -18,7 +18,7 @@ return {
 		completion = {
 			menu = {
 				winblend = vim.o.pumblend,
-				-- border = "single" ,
+				border = "single" ,
 				draw = {
 					-- columns = { {"label"}, { "kind_icon" } },
 					components = {
@@ -53,7 +53,7 @@ return {
 		},
 
 		-- :!でコマンドの補完の影響でフリーズするので一時的な処理．
-		cmdline = { enabled = false },
+		cmdline = { enabled = true },
 	},
 	opts_extend = { "sources.default" },
 }
