@@ -10,9 +10,7 @@ return {
 			layout = { cycle = true, preset="default" },
 		},
         input = { enabled = true },
-        scroll = { 
-
-        },
+        scroll = { enabled = true },
 	},
 	keys = {
 		{ "<leader><space>",function() Snacks.picker.smart() end, desc = "Smart Find Files" },

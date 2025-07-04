@@ -2,7 +2,6 @@
 vim.g.mapleader = " "
 
 --Line numbers 
-vim.opt.number = true
 vim.opt.relativenumber = false
 
 -- indent
@@ -20,6 +19,9 @@ vim.opt.smartindent = false
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
+vim.opt.winborder = "rounded"
+vim.opt.pumblend = 30
+vim.opt.winblend = 20
 
 --sprit
 vim.opt.splitbelow = true

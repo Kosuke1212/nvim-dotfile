@@ -5,7 +5,7 @@ return {
 	config = function()
 		require("solarized-osaka").setup({
 			transparent = true,
-			italic = true,
+            italic = true,
 			-- Neotree transparent settings
 			on_highlights = function(hl, c)
 				hl.NeoTreeNormal = {
@@ -22,6 +22,6 @@ return {
 				}
 			end,
 		})
-		-- vim.cmd("colorscheme solarized-osaka")
+		vim.cmd("colorscheme solarized-osaka")
 	end,
 }
