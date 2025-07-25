@@ -21,7 +21,7 @@ vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.winborder = "rounded"
 vim.opt.pumblend = 30
-vim.opt.winblend = 20
+-- vim.opt.winblend = 100
 
 --sprit
 vim.opt.splitbelow = true

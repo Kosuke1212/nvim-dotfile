@@ -6,6 +6,7 @@ return {
 		"rafamadriz/friendly-snippets",
 		"L3MON4D3/LuaSnip",
 	},
+    -- enabled = false,
 
 	-- use a release tag to download pre-built binaries
 	version = "1.*",
@@ -37,12 +38,21 @@ return {
 			nerd_font_variant = "mono",
 		},
 
+        signature = { 
+            enabled = true,
+            window = {
+                show_documentation = false,
+            },
+        },
+        cmdline = { enabled = true },
+
 		-- (Default) Only show the documentation popup when manually triggered
 		-- completion = { documentation = { auto_show = false } },
 		completion = {
 			documentation = { auto_show = false },
+            ghost_text = { enabled = false },
 			menu = {
-				winblend = vim.o.winblend,
+				-- winblend = vim.o.winblend,
                 draw = {
 					components = {
 						kind_icon = {
